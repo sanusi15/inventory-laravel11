@@ -7,6 +7,7 @@ let html5QRCodeScanner = new Html5QrcodeScanner("reader", {
 });
 
 function onScanSuccess(decodedText, decodedResult) {
+    // console.log(decodedResult);
     // redirect ke link hasil scan
     window.location.href = decodedResult.decodedText;
 

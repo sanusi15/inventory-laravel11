@@ -19,7 +19,7 @@ class QrCodeController extends Controller
     public function show($code)
     {
         $tipe = substr($code, 0, 3);
-        $realcode = substr($code, 3);
+        $realcode = substr($code, 3);        
         if($tipe == 'LTP'){
             $res = Laptops::with(['user', 'user.position'])->where('qr_code', $realcode)->first();
         }else{
@@ -32,7 +32,7 @@ class QrCodeController extends Controller
                 'jenis' => $tipe == 'LTP' ? 'Laptop' : 'Computer'
             ]);
         }else{
-            abort('404', 'Invalid Code');
+            // abort('404', 'Invalid Code');
         }
     }
 }

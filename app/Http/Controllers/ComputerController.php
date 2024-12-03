@@ -224,7 +224,7 @@ class ComputerController extends Controller
         }
         $qrcodePath = 'qrcodes/computer/computer_'.$computer->code.'.png';
         $base_url = config('app.url');
-        QRCode::url($base_url.'/scanresult/'.$computer->qr_code)
+        QRCode::url($base_url.'/scanresult/COM'.$computer->qr_code)
             ->setOutFile(Storage::disk('public')->path($qrcodePath))
             ->png();
         return response()->json([

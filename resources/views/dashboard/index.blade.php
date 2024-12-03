@@ -40,13 +40,13 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="avatar-lg rounded-circle bg-soft-primary border-primary border">
-                                        <i class="fe-heart font-22 avatar-title text-primary"></i>
+                                        <i class="fe-monitor font-22 avatar-title text-primary"></i>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="text-right">
-                                        <h3 class="mt-1">$<span data-plugin="counterup">58,947</span></h3>
-                                        <p class="text-muted mb-1 text-truncate">Total Revenue</p>
+                                        <h3 class="mt-1"><span data-plugin="counterup">{{$laptop_count}}</span></h3>
+                                        <p class="text-muted mb-1 text-truncate">Total Laptop</p>
                                     </div>
                                 </div>
                             </div> <!-- end row-->
@@ -58,13 +58,13 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="avatar-lg rounded-circle bg-soft-success border-success border">
-                                        <i class="fe-shopping-cart font-22 avatar-title text-success"></i>
+                                        <i class="fe-monitor font-22 avatar-title text-success"></i>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="text-right">
-                                        <h3 class="text-dark mt-1"><span data-plugin="counterup">127</span></h3>
-                                        <p class="text-muted mb-1 text-truncate">Today's Sales</p>
+                                        <h3 class="text-dark mt-1"><span data-plugin="counterup">{{$computer_count}}</span></h3>
+                                        <p class="text-muted mb-1 text-truncate">Total PC/Computer</p>
                                     </div>
                                 </div>
                             </div> <!-- end row-->
@@ -76,13 +76,13 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="avatar-lg rounded-circle bg-soft-info border-info border">
-                                        <i class="fe-bar-chart-line- font-22 avatar-title text-info"></i>
+                                        <i class="fe-printer font-22 avatar-title text-info"></i>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="text-right">
-                                        <h3 class="text-dark mt-1"><span data-plugin="counterup">0.58</span>%</h3>
-                                        <p class="text-muted mb-1 text-truncate">Conversion</p>
+                                        <h3 class="text-dark mt-1"><span data-plugin="counterup">{{$printer_count}}</span></h3>
+                                        <p class="text-muted mb-1 text-truncate">Total Printer</p>
                                     </div>
                                 </div>
                             </div> <!-- end row-->
@@ -94,13 +94,13 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="avatar-lg rounded-circle bg-soft-warning border-warning border">
-                                        <i class="fe-eye font-22 avatar-title text-warning"></i>
+                                        <i class="dripicons-camcorder font-22 avatar-title text-warning"></i>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="text-right">
-                                        <h3 class="text-dark mt-1"><span data-plugin="counterup">78.41</span>k</h3>
-                                        <p class="text-muted mb-1 text-truncate">Today's Visits</p>
+                                        <h3 class="text-dark mt-1"><span data-plugin="counterup">{{$proyektor_count}}</span></h3>
+                                        <p class="text-muted mb-1 text-truncate">Total Proyektor</p>
                                     </div>
                                 </div>
                             </div> <!-- end row-->
@@ -159,22 +159,23 @@
                     </div> <!-- end col-->
 
                     <div class="col-lg-8">
-                        <div class="card-box pb-2">
-                            <div class="float-right d-none d-md-inline-block">
-                                <div class="btn-group mb-2">
-                                    <button type="button" class="btn btn-xs btn-light">Today</button>
-                                    <button type="button" class="btn btn-xs btn-light">Weekly</button>
-                                    <button type="button" class="btn btn-xs btn-secondary">Monthly</button>
+                         <div class="card">
+                            <div class="card-body">
+                                <div class="card-widgets">
+                                    <a href="javascript: void(0);" data-toggle="reload"><i class="mdi mdi-refresh"></i></a>
+                                    <a data-toggle="collapse" href="#cardCollpase5" role="button" aria-expanded="false" aria-controls="cardCollpase5"><i class="mdi mdi-minus"></i></a>
+                                    <a href="javascript: void(0);" data-toggle="remove"><i class="mdi mdi-close"></i></a>
                                 </div>
-                            </div>
+                                <h4 class="header-title mb-0">Total Pengeluaran Dana Tahun Ini</h4>
 
-                            <h4 class="header-title mb-3">Sales Analytics</h4>
+                                <div id="cardCollpase5" class="collapse pt-3 show" dir="ltr">
+                                    <div id="apex-column-1" class="apex-charts" data-colors="#3283f6,#44cf9c,#CED4DC,#ECDB54"></div>
+                                </div> <!-- collapsed end -->
+                            </div> <!-- end card-body -->
+                        </div> <!-- end card-->
+                    </div>
 
-                            <div dir="ltr">
-                                <div id="sales-analytics" class="mt-4" data-colors="#3283f6,#43bee1"></div>
-                            </div>
-                        </div> <!-- end card-box -->
-                    </div> <!-- end col-->
+                    
                 </div>
                 <!-- end row -->
 
@@ -541,4 +542,6 @@
         </footer>
         <!-- end Footer -->
     </div>
+    
+    <x-slot:customjs>{{$custom_js}}</x-slot:customjs>
 </x-layouts>

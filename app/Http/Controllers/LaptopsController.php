@@ -211,7 +211,7 @@ class LaptopsController extends Controller
         }
         $qrcodePath = 'qrcodes/laptop/laptop_'.$laptop->code.'.png';
         $base_url = config('app.url');
-        QRCode::url($base_url.'/scanresult/'.$laptop->qr_code)
+        QRCode::url($base_url.'/scanresult/LTP'.$laptop->qr_code)
             ->setOutFile(Storage::disk('public')->path($qrcodePath))
             ->png();
 

@@ -810,7 +810,6 @@
         <script src="{{asset('admin_template/assets/js/vendor.min.js')}}"></script>
 
         <!-- Plugins js-->
-        <script src="{{asset('admin_template/assets/libs/apexcharts/apexcharts.min.js')}}"></script>
         <script src="{{asset('admin_template/assets/libs/selectize/js/standalone/selectize.min.js')}}"></script>
 
         <!-- third party js -->
@@ -845,7 +844,13 @@
         <!-- App js-->
         <script src="{{asset('admin_template/assets/js/app.min.js')}}"></script>
         <!-- QR reader -->
-        <script src="{{asset('js/qr-reader.js')}}"></script>   
+        <script src="{{asset('js/qr-reader.js')}}"></script>
+        <!-- Apex Charts JS -->
+        <script src="{{asset('admin_template/assets/libs/apexcharts/apexcharts.min.js')}}"></script>
+        <script src="https://apexcharts.com/samples/assets/irregular-data-series.js"></script>
+        <script src="https://apexcharts.com/samples/assets/ohlc.js"></script>
+        
+        
 
         @if(isset($customjs))
             <script src="{{asset('js/'.$customjs)}}"></script>
